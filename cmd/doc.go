@@ -1,0 +1,2 @@
+// tkctl entrypoint
+package cmd
