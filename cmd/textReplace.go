@@ -1,10 +1,10 @@
 package cmd
 
 import (
+	"github.com/russellgao/toolkit/util"
 	"github.com/spf13/cobra"
 	"log"
 	"regexp"
-	"russellgao/toolkit/util"
 	"strings"
 )
 

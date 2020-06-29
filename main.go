@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/russellgao/toolkit/cmd"
 	"os"
-	"russellgao/toolkit/cmd"
 )
 
 func init() {
