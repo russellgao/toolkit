@@ -8,7 +8,7 @@
 ### 源码安装
 有 `go` 语言环境的可以直接用源码进行编译运行
 
-```shell script
+```
 git clone https://github.com/russellgao/toolkit.git
 cd toolkit
 make
@@ -22,7 +22,7 @@ https://github.com/russellgao/toolkit/releases/
 ## 用法
 ###  本机运行
 可以通过如下命令进行
-```shell script
+```
 gwz:toolkit gaoweizong$ tkctl --help
 
 tkctl is a toolkit entrypoint,run `tkctl --help` get more information.
@@ -81,7 +81,7 @@ docker run -it -v /data:/data --rm russellgao/toolkit:latest tkctl --help
 - go 1.14.2
 
 ## 支持的功能
-### 1.0
+### 1.0.0
 - 文本正则替换
 
 
