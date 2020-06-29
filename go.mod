@@ -1,4 +1,4 @@
-module russellgao/toolkit
+module github.com/russellgao/toolkit
 
 go 1.14
 
