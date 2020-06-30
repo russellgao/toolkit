@@ -1,6 +1,6 @@
 # 编译阶段
 FROM russellgao/golang:1.14.2 as builder
-ADD toolkit /go/src/toolkit
+ADD ../../toolkit /go/src/toolkit
 WORKDIR /go/src/toolkit
 RUN flags="-X 'github.com/prometheus/common/version.Version=`cat VERSION`' -X 'github.com/prometheus/common/version.BuildUser=gaoweizong@hd123.com' -X 'github.com/prometheus/common/version.BuildDate=`date "+%Y-%m-%d %H:%M:%S"`' -X 'github.com/prometheus/common/version.Branch=HEAD' -X 'github.com/prometheus/common/version.Revision=`git log -n1 --format=%H`'" \
     &&GOOS=linux GOARCH=amd64 go build -ldflags="$flags" -o /tmp/tkctl
