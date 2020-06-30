@@ -15,4 +15,4 @@ MAINTAINER gaoweizong "gaoweizong@hd123.com"
 ENV LC_ALL en_US.UTF-8
 COPY --from=builder /tmp/tkctl /bin
 RUN chmod +x /bin/tkctl
-CMD ["/bin/tkctl"]
+CMD ["init"]
