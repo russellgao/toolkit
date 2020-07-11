@@ -7,8 +7,9 @@ import (
 )
 
 var (
-	cfgfileName string
-	showVersion bool
+	showVersion      bool
+	length           int
+	specialCharacter string
 )
 
 var RootCmd = &cobra.Command{
@@ -25,6 +26,8 @@ var RootCmd = &cobra.Command{
 func init() {
 	RootCmd.AddCommand(versionCmd)
 	RootCmd.AddCommand(NewTextReplaceCmd())
+	RootCmd.AddCommand(newGenerateSecterCode())
+
 	RootCmd.Flags().BoolVarP(&showVersion, "version", "v", false, "show the version and exit")
 }
 
