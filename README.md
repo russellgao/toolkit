@@ -83,7 +83,7 @@ docker run -it -v /data:/data --rm russellgao/toolkit:latest tkctl --help
 ## 支持的功能
 ### 1.0.0
 - 文本正则替换
-
+- 生成随机密码
 
 ## 未来展望
 - 期望可以成为一个完整的工具箱，可以解决日常工作中的繁杂事情。
