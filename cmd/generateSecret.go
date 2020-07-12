@@ -7,7 +7,7 @@ import (
 
 /*
  tkctl generate_secret --help
-生成随机密码，支持1～64为长度，可以指定是否包含特殊字符
+生成随机密码，支持1～100位长度，可以指定是否包含特殊字符
 
 Usage:
   tkctl generate_secret [flags]
@@ -21,7 +21,7 @@ Flags:
 func newGenerateSecterCode() *cobra.Command {
 	generateSecretCodeCmd := &cobra.Command{
 		Use:   "generate_secret",
-		Short: "生成随机密码，支持1～64为长度，可以指定是否包含特殊字符",
+		Short: "生成随机密码，支持1～100位长度，可以指定是否包含特殊字符",
 		Run: func(cmd *cobra.Command, args []string) {
 			internal.GenerateSecretCode(specialCharacter, length)
 		},
