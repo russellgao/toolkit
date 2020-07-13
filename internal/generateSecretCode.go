@@ -29,7 +29,7 @@ func GenerateSecretCode(specialCharacter string, length int) {
 		letterBytes += specialCharacter
 	}
 	randomCode := RandStringBytesMaskImpr(length)
-	fmt.Printf("生成的的随机密码为:\n\n%s\n\n请您妥善保管，祝您工作愉快^o^", randomCode)
+	fmt.Printf("生成的的随机密码为:\n\n%s\n\n请您妥善保管，祝您工作愉快^o^\n", randomCode)
 }
 
 func RandStringBytesMaskImpr(n int) string {
