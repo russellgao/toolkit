@@ -1,6 +1,14 @@
 # 编译阶段
 FROM russellgao/golang:1.14.2 as builder
-ADD toolkit /go/src/toolkit
+ADD .git /go/src/toolkit/.git
+ADD cmd /go/src/toolkit/cmd
+ADD config /go/src/toolkit/config
+ADD exception /go/src/toolkit/exception
+ADD internal /go/src/toolkit/internal
+ADD util /go/src/toolkit/util
+ADD vendor /go/src/toolkit/vendor
+ADD go.mod main.go VERSION /go/src/toolkit/cmd/
+
 WORKDIR /go/src/toolkit
 RUN flags="-X 'github.com/prometheus/common/version.Version=`cat VERSION`' -X 'github.com/prometheus/common/version.BuildUser=gaoweizong@hd123.com' -X 'github.com/prometheus/common/version.BuildDate=`date "+%Y-%m-%d %H:%M:%S"`' -X 'github.com/prometheus/common/version.Branch=HEAD' -X 'github.com/prometheus/common/version.Revision=`git log -n1 --format=%H`'" \
     &&GOOS=linux GOARCH=amd64 go build -ldflags="$flags" -o /tmp/tkctl

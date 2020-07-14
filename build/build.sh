@@ -1,4 +1,4 @@
 version=$1
-\cp toolkit/build/Dockerfile .
-docker build -t russellgao/toolkit:$version .
+set -ex
+docker build -t russellgao/toolkit:$version -f build/Dockerfile .
 docker push russellgao/toolkit:$version
