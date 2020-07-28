@@ -8,6 +8,21 @@ import (
 	"strings"
 )
 
+/*
+ tkctl replace -h
+文本替换，支持正则替换和非正则替换，类似与linux下的sed，但比sed更好用，而且可以跨平台使用
+
+Usage:
+  tkctl replace [flags]
+
+Flags:
+  -d, --dirs string      需要替换的目录, 默认为当前路径 (default ".")
+  -h, --help             help for replace
+  -m, --mode string      替换的模式，支持正则（regexp）和非正则（text）两种模式，默认非正则， (default "text")
+  -p, --pattern string   需要替换的pattern  [required]
+  -r, --repl string      目标字符串  [required]
+*/
+
 var (
 	text_mode    string
 	text_repl    string
@@ -17,16 +32,16 @@ var (
 
 func NewTextReplaceCmd() *cobra.Command {
 	textReplaceCmd := &cobra.Command{
-		Use:   "text_replace",
+		Use:   "replace",
 		Short: "文本替换，支持正则替换和非正则替换，类似与linux下的sed，但比sed更好用，而且可以跨平台使用",
 		Run: func(cmd *cobra.Command, args []string) {
 			textReplace()
 		},
 	}
-	textReplaceCmd.Flags().StringVar(&text_mode, "text-mode", "text", "替换的模式，支持正则（regexp）和非正则（text）两种模式，默认非正则，")
-	textReplaceCmd.Flags().StringVar(&text_repl, "text-repl", "", "目标字符串  [required]")
-	textReplaceCmd.Flags().StringVar(&text_pattern, "text-pattern", "", "需要替换的pattern  [required]")
-	textReplaceCmd.Flags().StringVar(&text_dirs, "text-dirs", ".", "需要替换的目录, 默认为当前路径")
+	textReplaceCmd.Flags().StringVarP(&text_mode, "mode", "m", "text", "替换的模式，支持正则（regexp）和非正则（text）两种模式，默认非正则，")
+	textReplaceCmd.Flags().StringVarP(&text_repl, "repl", "r", "", "目标字符串  [required]")
+	textReplaceCmd.Flags().StringVarP(&text_pattern, "pattern", "p", "", "需要替换的pattern  [required]")
+	textReplaceCmd.Flags().StringVarP(&text_dirs, "dirs", "d", ".", "需要替换的目录, 默认为当前路径")
 	return textReplaceCmd
 }
 

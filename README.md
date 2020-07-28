@@ -32,32 +32,34 @@ Usage:
   tkctl [command]
 
 Available Commands:
-  help         Help about any command
-  text_replace 文本替换，支持正则替换和非正则替换，类似与linux下的sed，但比sed更好用，而且可以跨平台使用
-  version      tkctl version
+  help        Help about any command
+  replace     文本替换，支持正则替换和非正则替换，类似与linux下的sed，但比sed更好用，而且可以跨平台使用
+  secret      生成随机密码，支持1～100位长度，可以指定是否包含特殊字符
+  version     tkctl version
 
 Flags:
   -h, --help      help for tkctl
   -v, --version   show the version and exit
 
 Use "tkctl [command] --help" for more information about a command.
+
 ```
 
 tkctl 中的子命令会不断更新，某个具体的功能请查看`Available Commands:`下的帮助文档，如文本替换
 
 ```shell script
-gwz:toolkit gaoweizong$ tkctl text_replace --help 
+ tkctl replace --help 
 文本替换，支持正则替换和非正则替换，类似与linux下的sed，但比sed更好用，而且可以跨平台使用
 
 Usage:
-  tkctl text_replace [flags]
+  tkctl replace [flags]
 
 Flags:
-  -h, --help                  help for text_replace
-      --text-dirs string      需要替换的目录, 默认为当前路径 (default ".")
-      --text-mode string      替换的模式，支持正则（regexp）和非正则（text）两种模式，默认非正则， (default "text")
-      --text-pattern string   需要替换的pattern  [required]
-      --text-repl string      目标字符串  [required]
+  -d, --dirs string      需要替换的目录, 默认为当前路径 (default ".")
+  -h, --help             help for replace
+  -m, --mode string      替换的模式，支持正则（regexp）和非正则（text）两种模式，默认非正则， (default "text")
+  -p, --pattern string   需要替换的pattern  [required]
+  -r, --repl string      目标字符串  [required]
 ```
 
 ### docker
